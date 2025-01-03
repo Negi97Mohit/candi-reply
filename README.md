@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# Fujm Candi Reply
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fujm Candi Reply is a React-based web application that simplifies the process of evaluating job applications. It enables recruiters to upload candidate resumes, compare them with job descriptions, and generate detailed justifications for decisions such as rejection or acceptance.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Resume Parsing**: Supports `.txt`, `.pdf`, and `.docx` file formats.
+- **Job-Resume Comparison**: Calculates a match percentage between the job description and the candidate's resume.
+- **Email Justification**: Automatically generates a detailed justification for candidate decisions based on input data.
+- **Clear UI**: Intuitive interface for recruiters to manage job descriptions, resumes, and reasons for rejection or acceptance.
+- **Backend Integration**: Communicates with a backend server to process data and generate outputs.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- React
+- Mammoth.js (for parsing `.docx` files)
+- PDF.js (for parsing `.pdf` files)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- Node.js with Express
+- [Groq SDK](https://groq.dev) for AI-powered text processing and justifications
 
-### `npm test`
+### Other
+- CORS for cross-origin requests
+- dotenv for environment variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js (v14 or later)
+- npm (v6 or later)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/yourusername/fujm-candi-reply.git
+    cd fujm-candi-reply
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install Dependencies**:
+    - For the frontend:
+        ```bash
+        cd frontend
+        npm install
+        ```
+    - For the backend:
+        ```bash
+        cd backend
+        npm install
+        ```
 
-### `npm run eject`
+3. **Set Up Environment Variables**:
+    - Create a `.env` file in the `backend` directory:
+        ```
+        GROQ_API_KEY=your_groq_api_key
+        ```
+    - Replace `your_groq_api_key` with your Groq API key.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Start the Development Servers**:
+    - Start the backend server:
+        ```bash
+        cd backend
+        npm start
+        ```
+    - Start the React frontend:
+        ```bash
+        cd frontend
+        npm start
+        ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    The application should now be accessible at `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Enter Job Description**: Paste the job qualifications in the provided text area.
+2. **Upload Resume**: Upload a candidate's resume in `.txt`, `.pdf`, or `.docx` format.
+3. **Select Rejection Reason**: Choose a reason for rejection (if applicable).
+4. **Generate Justification**: Click "Justify Reason" to generate a detailed explanation.
+5. **Review Results**: View the match percentage and justification in the UI.
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```plaintext
+fujm-candi-reply/
+├── frontend/        # React frontend
+│   ├── src/
+│   └── public/
+├── backend/         # Node.js backend
+│   ├── routes/
+│   └── utils/
+└── README.md
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+Contributions are welcome! Please fork the repository and submit a pull request for review.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
